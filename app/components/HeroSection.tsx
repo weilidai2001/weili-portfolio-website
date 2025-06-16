@@ -100,7 +100,7 @@ export default function HeroSection() {
         >
           <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
             <img
-              src="/code.jpg"
+              src="/avatar.jpg"
               alt="Avatar"
               className="mx-auto mb-8 w-32 h-32 md:w-40 md:h-40 rounded-full shadow-lg object-cover border-4 border-white"
             />
