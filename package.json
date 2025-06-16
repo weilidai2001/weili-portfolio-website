@@ -4,10 +4,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
-		"build": "next build",
+		"build": "next build && node postprocess-urls.js",
 		"start": "next start",
-		"lint": "next lint",
-		"export": "next export"
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"react": "^19.0.0",
