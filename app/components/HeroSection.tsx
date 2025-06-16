@@ -16,23 +16,23 @@ export default function HeroSection() {
 				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8 md:mb-12">
 					<div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
 						<h1 className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
-							David Miller
+							Weili Dai
 						</h1>
-						<h2 className="text-2xl md:text-4xl font-bold text-gray-900">Full Stack Developer</h2>
+						<h2 className="text-2xl md:text-4xl font-bold text-gray-900">Tech Lead - Full Stack Developer</h2>
 						<p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-							I craft end-to-end solutions with 8+ years of experience building scalable applications and leading development teams.
+							I craft end-to-end solutions with 10+ years of experience building scalable applications and leading development teams.
 						</p>
 						<p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
-							Previously Senior Full Stack Developer at <span className="text-blue-600">Stripe</span> and Tech Lead at{' '}
-							<span className="text-purple-600">Vercel</span>
+							Previously Tech Lead at <span className="text-blue-600">Gumtree</span> and worked at {' '}
+							<span className="text-purple-600">CNN, Sky, BBC</span>
 						</p>
 					</div>
 					<div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8">
 						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-blue-100 rounded-full text-blue-600 text-xs md:text-sm">TypeScript</span>
-						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-purple-100 rounded-full text-purple-600 text-xs md:text-sm">React & Next.js</span>
+						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-purple-100 rounded-full text-purple-600 text-xs md:text-sm">React CSR + SSR</span>
 						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-teal-100 rounded-full text-teal-600 text-xs md:text-sm">Node.js</span>
-						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-blue-100 rounded-full text-blue-600 text-xs md:text-sm">Python</span>
-						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-purple-100 rounded-full text-purple-600 text-xs md:text-sm">AWS</span>
+						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-blue-100 rounded-full text-blue-600 text-xs md:text-sm">Java</span>
+						<span className="px-3 md:px-4 py-1.5 md:py-2 bg-purple-100 rounded-full text-purple-600 text-xs md:text-sm">Docker</span>
 					</div>
 				</motion.div>
 
