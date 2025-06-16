@@ -14,11 +14,44 @@ const heroData = {
     others: "CNN, Sky, BBC"
   },
   badges: [
+    // Frontend (blue)
+    { label: "JavaScript", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
+    { label: "React.js", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
     { label: "TypeScript", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
-    { label: "React CSR + SSR", color: "purple", bg: "bg-purple-100", text: "text-purple-600" },
-    { label: "Node.js", color: "teal", bg: "bg-teal-100", text: "text-teal-600" },
-    { label: "Java", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
-    { label: "Docker", color: "purple", bg: "bg-purple-100", text: "text-purple-600" }
+    { label: "Redux", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
+    { label: "Webpack", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
+    { label: "Emotion", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
+    { label: "CSS-in-JS", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
+    { label: "SCSS", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
+    { label: "Storybook", color: "blue", bg: "bg-blue-100", text: "text-blue-600" },
+    // Backend (purple)
+    { label: "React SSR", color: "purple", bg: "bg-purple-100", text: "text-purple-600" },
+    { label: "Node.js", color: "purple", bg: "bg-purple-100", text: "text-purple-600" },
+    { label: "Express.js", color: "purple", bg: "bg-purple-100", text: "text-purple-600" },
+    { label: "RESTful APIs", color: "purple", bg: "bg-purple-100", text: "text-purple-600" },
+    { label: "Java", color: "purple", bg: "bg-purple-100", text: "text-purple-600" },
+    { label: "Scala", color: "purple", bg: "bg-purple-100", text: "text-purple-600" },
+    // DevOps / Cloud (teal)
+    { label: "Jenkins", color: "teal", bg: "bg-teal-100", text: "text-teal-600" },
+    { label: "Docker", color: "teal", bg: "bg-teal-100", text: "text-teal-600" },
+    { label: "Kubernetes", color: "teal", bg: "bg-teal-100", text: "text-teal-600" },
+    { label: "GCP", color: "teal", bg: "bg-teal-100", text: "text-teal-600" },
+    { label: "Ansible", color: "teal", bg: "bg-teal-100", text: "text-teal-600" },
+    // Databases (orange)
+    { label: "BigQuery", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
+    { label: "PostgreSQL", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
+    { label: "MongoDB", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
+    { label: "Cassandra", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
+    { label: "Redis", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
+    { label: "MSSQL", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
+    // Testing (pink)
+    { label: "TDD", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
+    { label: "Jest", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
+    { label: "React Testing Library", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
+    { label: "Cypress", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
+    { label: "Mocha", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
+    { label: "Sinon", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
+  
   ],
   stacks: [
     {
@@ -80,15 +113,17 @@ export default function HeroSection() {
 							<span className="text-purple-600">{heroData.previous.others}</span>
 						</p>
 					</div>
-					<div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8">
-						{heroData.badges.map(badge => (
-							<span
-								key={badge.label}
-								className={`px-3 md:px-4 py-1.5 md:py-2 ${badge.bg} rounded-full ${badge.text} text-xs md:text-sm`}
-							>
-								{badge.label}
-							</span>
-						))}
+					<div className="max-w-5xl mx-auto w-full">
+						<div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8">
+							{heroData.badges.map(badge => (
+								<span
+									key={badge.label}
+									className={`px-3 md:px-4 py-1.5 md:py-2 ${badge.bg} rounded-full ${badge.text} text-xs md:text-sm`}
+								>
+									{badge.label}
+								</span>
+							))}
+						</div>
 					</div>
 				</motion.div>
 
