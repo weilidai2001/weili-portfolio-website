@@ -104,13 +104,13 @@ const projects: Project[] = [
 
 export default function ProjectsSection() {
   return (
-    <section className="py-20 px-4">
+    <section className="py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-16 text-center text-gray-900"
+          className="text-3xl font-bold mb-8 text-center text-gray-900"
         >
           Full Stack Projects
         </motion.h2>

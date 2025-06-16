@@ -41,7 +41,6 @@ const heroData = {
     { label: "BigQuery", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
     { label: "PostgreSQL", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
     { label: "MongoDB", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
-    { label: "Cassandra", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
     { label: "Redis", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
     { label: "MSSQL", color: "orange", bg: "bg-orange-100", text: "text-orange-600" },
     // Testing (pink)
@@ -49,8 +48,6 @@ const heroData = {
     { label: "Jest", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
     { label: "React Testing Library", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
     { label: "Cypress", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
-    { label: "Mocha", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
-    { label: "Sinon", color: "pink", bg: "bg-pink-100", text: "text-pink-600" },
   
   ],
   stacks: [
@@ -93,12 +90,12 @@ export default function HeroSection() {
 	const [selectedStack, setSelectedStack] = useState<'frontend' | 'backend' | 'devops' | null>(null);
 
 	return (
-		<section className="min-h-screen relative overflow-hidden py-24 md:py-0">
+		<section className="min-h-screen relative overflow-hidden py-12 md:py-0">
 			<div className="absolute inset-0">
 				<div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
 			</div>
-			<div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 pt-8 md:pt-0">
-				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8 md:mb-12">
+			<div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 pt-4 md:pt-0">
+				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-4 md:mb-6">
 					<div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
 						<h1 className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
 							{heroData.name}
@@ -114,7 +111,7 @@ export default function HeroSection() {
 						</p>
 					</div>
 					<div className="max-w-5xl mx-auto w-full">
-						<div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8">
+						<div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-2 md:mb-4">
 							{heroData.badges.map(badge => (
 								<span
 									key={badge.label}
