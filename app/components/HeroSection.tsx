@@ -27,8 +27,9 @@ const heroData = {
       color: "blue",
       points: [
         "Modern React Architectures",
-        "Performance Optimization",
-        "Responsive & Interactive UIs"
+        "Performance Optimisation",
+        "Responsive & Interactive UIs",
+		"Third-party Integrations"
       ]
     },
     {
@@ -36,9 +37,10 @@ const heroData = {
       title: "Backend Development",
       color: "purple",
       points: [
+		"React Server-Side Rendering",
         "API Design & Development",
-        "Database Architecture",
-        "Real-time Systems"
+		"Legacy Code Migration",
+        "Monitoring and Alerting",
       ]
     },
     {
@@ -46,9 +48,9 @@ const heroData = {
       title: "DevOps & Cloud",
       color: "teal",
       points: [
-        "AWS Infrastructure",
-        "CI/CD Pipelines",
-        "Scalable Architecture"
+        "Scalable Architecture",
+		"CI/CD Pipelines",
+		"GCP Infrastructure",
       ]
     }
   ]
