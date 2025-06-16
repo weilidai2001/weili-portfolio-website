@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
 
 const contactData = {
   heading: "Let's Build Something Amazing",
@@ -83,7 +82,7 @@ export default function ContactSection() {
 
           {/* Contact Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            {contactData.buttons.map((btn, i) => (
+            {contactData.buttons.map((btn) => (
               <a
                 key={btn.href}
                 href={btn.href}
@@ -99,7 +98,7 @@ export default function ContactSection() {
 
           {/* Social Links */}
           <div className="flex justify-center gap-6">
-            {contactData.socialLinks.map((link, i) => (
+            {contactData.socialLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
