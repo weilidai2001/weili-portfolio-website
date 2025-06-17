@@ -53,7 +53,7 @@ const projects: Project[] = [
   },
   {
     title: 'Pricing DB Workflow Automation',
-    titleColour: 'purple',
+    titleColour: 'orange',
     bullets: [
       'Transformed a manual SQL-driven process into a safe, automated backend system.',
       'Original workflow involved handcrafted SQL + live production DB changes',
