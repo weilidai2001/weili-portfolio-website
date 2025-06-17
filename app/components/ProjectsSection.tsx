@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 interface Project {
   title: string;
+  titleColour: string;
   bullets: string[];
   keyOutcome: string;
 }
@@ -12,6 +13,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'Rebuild Legacy Service with React + TypeScript',
+    titleColour: 'blue',
     bullets: [
       'Rebuilt monolithic Java/FreeMarker templates into modular, testable components using React, TypeScript, and Emotion.',
       'Pages served over 1M requests per day; I owned the entire rebuild across architecture, testing (Jest), and rollout.',
@@ -24,6 +26,7 @@ const projects: Project[] = [
   },
   {
     title: 'Partnerships API Server',
+    titleColour: 'purple',
     bullets: [
       'Full ownership of high-throughput Node.js backend powering in-house ads across web and mobile.',
       'Designed and implemented an API server from scratch using Node.js',
@@ -37,6 +40,7 @@ const projects: Project[] = [
   },
   {
     title: 'Scala to TypeScript Migration',
+    titleColour: 'purple',
     bullets: [
       'Backend logic refactor to unlock team-wide maintainability and cross-functional collaboration.',
       'Migrated core AdTech config system from Scala (backend) to TypeScript',
@@ -49,6 +53,7 @@ const projects: Project[] = [
   },
   {
     title: 'Pricing DB Workflow Automation',
+    titleColour: 'purple',
     bullets: [
       'Transformed a manual SQL-driven process into a safe, automated backend system.',
       'Original workflow involved handcrafted SQL + live production DB changes',
@@ -97,7 +102,9 @@ export default function ProjectsSection() {
 
               {/* Project Content */}
               <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{project.title}</h3>
+                <h3 className={`text-xl font-semibold mb-3 text-${project.titleColour}-600`}>
+                  {project.title}
+                </h3>
                 <ul className="space-y-2 text-sm text-gray-700 mb-4">
                   {project.bullets.map((item, i) => (
                     <li key={i}>• {item}</li>
