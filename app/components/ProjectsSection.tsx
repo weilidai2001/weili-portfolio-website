@@ -58,7 +58,7 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="text-3xl font-bold mb-8 text-center text-gray-900"
         >
-          Projects
+          Entreprise Projects
         </motion.h2>
         <div className="space-y-12">
           {projects.map((project, index) => (
