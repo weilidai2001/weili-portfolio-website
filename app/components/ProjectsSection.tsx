@@ -52,7 +52,7 @@ const projects: Project[] = [
 export default function ProjectsSection() {
   return (
     <section className="py-10 px-4">
-      <div className="max-w-3xl mx-auto">
+      <div className="w-full">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -61,39 +61,39 @@ export default function ProjectsSection() {
         >
           Entreprise Projects
         </motion.h2>
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg p-4 md:p-8"
-            >
-              <div className="flex flex-col md:flex-row-reverse items-center md:items-stretch">
-                {/* Thumbnail */}
-                <div className="w-full md:w-60 flex-shrink-0 flex justify-center items-start md:items-center bg-gray-50 md:bg-transparent">
-                  <Image
-                    src="/laptop.jpg"
-                    alt="Project thumbnail"
-                    width={220}
-                    height={220}
-                    className="object-contain rounded-t-xl md:rounded-r-xl md:rounded-tl-none md:rounded-br-xl"
-                    priority={index === 0}
-                  />
-                </div>
-                {/* Project Content */}
-                <div className="p-8 flex-1 md:pr-10 md:pl-0">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900">{project.title}</h3>
-                  <ul className="space-y-2 text-sm text-gray-700 mb-4">
-                    {project.bullets.map((item, i) => (
-                      <li key={i}>• {item}</li>
-                    ))}
-                  </ul>
-                  <div className="mt-2">
-                    <h4 className="text-sm font-semibold text-teal-600 mb-1">Key Outcome:</h4>
-                    <p className="text-gray-800 text-sm">{project.keyOutcome}</p>
-                  </div>
+        <div
+  className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(560px,1fr))] gap-8 max-w-6xl mx-auto"
+>
+  {projects.map((project, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg h-full flex flex-col"
+    >
+              {/* Thumbnail */}
+              <div className="w-full flex-shrink-0 flex justify-center items-center bg-gray-50 p-8">
+                <Image
+                  src="/laptop.jpg"
+                  alt="Project thumbnail"
+                  width={220}
+                  height={220}
+                  className="object-contain"
+                  priority={index === 0}
+                />
+              </div>
+              {/* Project Content */}
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{project.title}</h3>
+                <ul className="space-y-2 text-sm text-gray-700 mb-4">
+                  {project.bullets.map((item, i) => (
+                    <li key={i}>• {item}</li>
+                  ))}
+                </ul>
+                <div className="mt-auto">
+                  <h4 className="text-sm font-semibold text-teal-600 mb-1">Key Outcome:</h4>
+                  <p className="text-gray-800 text-sm">{project.keyOutcome}</p>
                 </div>
               </div>
             </motion.div>
