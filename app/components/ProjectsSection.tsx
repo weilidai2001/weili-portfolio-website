@@ -11,6 +11,18 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Rebuild Legacy Service with React + TypeScript',
+    bullets: [
+      'Rebuilt monolithic Java/FreeMarker templates into modular, testable components using React, TypeScript, and Emotion.',
+      'Pages served over 1M requests per day; I owned the entire rebuild across architecture, testing (Jest), and rollout.',
+      'Created frontend patterns now adopted across the org, enabling consistent design and faster onboarding.',
+      'Optimised SSR performance and browser load with backend profiling and selective lazy loading — improving core metrics by 30%.',
+      'Engineered a new CI/CD process that automated production deploys, removing prior dependencies on Platform and enabling 10x deployment frequency.',
+    ],
+    keyOutcome:
+      'Full re-architecture of critical web pages — both frontend and DevOps — driving lasting team-wide impact.',
+  },
+  {
     title: 'Partnerships API Server',
     bullets: [
       'Full ownership of high-throughput Node.js backend powering in-house ads across web and mobile.',
@@ -50,6 +62,7 @@ const projects: Project[] = [
 ];
 
 export default function ProjectsSection() {
+  const showThumbnails = false;
   return (
     <section className="py-10 px-4">
       <div className="w-full">
@@ -70,16 +83,18 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg h-full flex flex-col"
             >
-              {/* Thumbnail */}
-              <div className="w-full aspect-[16/9] relative bg-gray-50">
-                <Image
-                  src="/laptop.jpg"
-                  alt="Project thumbnail"
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                />
-              </div>
+              {showThumbnails && (
+                <div className="w-full aspect-[16/9] relative bg-gray-50">
+                  <Image
+                    src="/laptop.jpg"
+                    alt="Project thumbnail"
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                  />
+                </div>
+              )}
+
               {/* Project Content */}
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">{project.title}</h3>
