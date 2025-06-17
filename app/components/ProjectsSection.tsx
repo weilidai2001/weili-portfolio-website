@@ -61,25 +61,22 @@ export default function ProjectsSection() {
         >
           Entreprise Projects
         </motion.h2>
-        <div
-  className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(560px,1fr))] gap-8 max-w-6xl mx-auto"
->
-  {projects.map((project, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg h-full flex flex-col"
-    >
+        <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(560px,1fr))] gap-8 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg h-full flex flex-col"
+            >
               {/* Thumbnail */}
-              <div className="w-full flex-shrink-0 flex justify-center items-center bg-gray-50 p-8">
+              <div className="w-full aspect-[16/9] relative bg-gray-50">
                 <Image
                   src="/laptop.jpg"
                   alt="Project thumbnail"
-                  width={220}
-                  height={220}
-                  className="object-contain"
+                  fill
+                  className="object-cover"
                   priority={index === 0}
                 />
               </div>
