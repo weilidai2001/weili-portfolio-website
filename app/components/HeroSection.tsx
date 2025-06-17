@@ -88,12 +88,12 @@ export default function HeroSection() {
   );
 
   return (
-    <section className="min-h-screen relative overflow-hidden py-12 md:py-0">
+    <section id="hero" aria-labelledby="hero-heading" className="min-h-screen relative overflow-hidden py-12 md:py-0">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" role="presentation" />
       </div>
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 pt-4 md:pt-0">
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-4 md:mb-6"
@@ -101,10 +101,10 @@ export default function HeroSection() {
           <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
             <img
               src="/avatar.jpg"
-              alt="Avatar"
+              alt="Weili Dai - Full Stack Developer"
               className="mx-auto mb-8 w-32 h-32 md:w-40 md:h-40 rounded-full shadow-lg object-cover border-4 border-white"
             />
-            <h1 className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
+            <h1 id="hero-heading" className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
               {heroData.name}
             </h1>
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900">{heroData.title}</h2>
@@ -118,22 +118,24 @@ export default function HeroSection() {
             </p>
           </div>
           <div className="max-w-5xl mx-auto w-full">
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-2 md:mb-4">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-2 md:mb-4" role="list" aria-label="Technical skills">
               {heroData.badges.map((badge) => (
                 <span
                   key={badge.label}
                   className={`px-3 md:px-4 py-1.5 md:py-2 ${badge.bg} rounded-full ${badge.text} text-xs md:text-sm`}
+                  role="listitem"
                 >
                   {badge.label}
                 </span>
               ))}
             </div>
           </div>
-        </motion.div>
+        </motion.header>
 
         {/* Interactive System Architecture */}
         <div className="w-full max-w-5xl mx-auto relative px-2 md:px-4">
-          <motion.div
+          <motion.section
+            aria-label="Technical expertise areas"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -151,12 +153,12 @@ export default function HeroSection() {
                   onMouseEnter={() => setSelectedStack(stack.key as typeof selectedStack)}
                   onMouseLeave={() => setSelectedStack(null)}
                 >
-                  <h3
+                  <h2
                     className={`text-lg md:text-xl font-semibold mb-3 md:mb-4 text-${stack.color}-600`}
                   >
                     {stack.title}
-                  </h3>
-                  <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-600">
+                  </h2>
+                  <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-600" aria-label={`${stack.title} skills`}>
                     {stack.points.map((point) => (
                       <li className="flex items-center gap-2" key={point}>
                         <div className={`w-1.5 h-1.5 bg-${stack.color}-500 rounded-full`} />
@@ -167,7 +169,7 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </motion.section>
         </div>
       </div>
     </section>

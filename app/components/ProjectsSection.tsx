@@ -69,19 +69,20 @@ const projects: Project[] = [
 export default function ProjectsSection() {
   const showThumbnails = false;
   return (
-    <section className="py-10 px-4">
-      <div className="w-full">
+    <section id="projects" aria-labelledby="projects-heading" className="py-10 px-4">
+      <header className="w-full">
         <motion.h2
+          id="projects-heading"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-3xl font-bold mb-8 text-center text-gray-900"
         >
-          Entreprise Projects
+          Enterprise Projects
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(560px,1fr))] gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -102,9 +103,9 @@ export default function ProjectsSection() {
 
               {/* Project Content */}
               <div className="p-8 flex-1 flex flex-col">
-                <h3 className={`text-xl font-semibold mb-3 text-${project.titleColour}-600`}>
-                  {project.title}
-                </h3>
+                  <h3 className={`text-xl font-semibold mb-3 text-${project.titleColour}-600`}>
+                    {project.title}
+                  </h3>
                 <ul className="space-y-2 text-sm text-gray-700 mb-4">
                   {project.bullets.map((item, i) => (
                     <li key={i}>• {item}</li>
@@ -115,10 +116,10 @@ export default function ProjectsSection() {
                   <p className="text-gray-800 text-sm">{project.keyOutcome}</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
-      </div>
+      </header>
     </section>
   );
 }
