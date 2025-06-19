@@ -88,7 +88,7 @@ export default function HeroSection() {
   );
 
   return (
-    <section id="hero" aria-labelledby="hero-heading" className="min-h-screen relative overflow-hidden py-12 md:py-0">
+    <section id="hero" aria-labelledby="hero-heading" className="min-h-screen relative overflow-hidden py-12">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" role="presentation" />
       </div>
