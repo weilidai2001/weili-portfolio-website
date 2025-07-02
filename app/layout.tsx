@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import JsonLdSchema from './components/JsonLdSchema';
 
@@ -76,6 +77,30 @@ export default function RootLayout({
 			<head>
 				<link rel="canonical" href="https://www.weilidai.co.uk" />
 				<JsonLdSchema />
+				<Script id="clarity-script" strategy="afterInteractive">
+					{`(function(c,l,a,r,i,t,y){
+						c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+						t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+						y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+					})(window, document, "clarity", "script", "s8lfixsft5");`}
+				</Script>
+
+				{/* Google tag (gtag.js) */}
+				<Script
+					id="gtag-js"
+					src="https://www.googletagmanager.com/gtag/js?id=G-RJV1F5D1QR"
+					strategy="afterInteractive"
+					async
+				/>
+				<Script id="gtag-init" strategy="afterInteractive">
+					{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', 'G-RJV1F5D1QR');
+					`}
+				</Script>
 			</head>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
 		</html>
