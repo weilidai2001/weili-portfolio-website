@@ -2,7 +2,26 @@
 
 import { motion } from 'framer-motion';
 
-const contactData = {
+type ContactData = {
+  heading: string;
+  description: string;
+  location: {
+    icon: React.ReactNode;
+    text: string;
+  };
+  buttons: Array<{
+    href: string;
+    text: string;
+    className: string;
+    icon: React.ReactNode;
+  }>;
+  socialLinks: Array<{
+    href: string;
+    icon: React.ReactNode;
+  }>;
+};
+
+const contactData: ContactData = {
   heading: "Let's Build Something Amazing",
   description:
     "Looking for a full-stack developer who can architect and implement complete solutions? Let's discuss your project.",
